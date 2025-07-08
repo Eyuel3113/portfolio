@@ -12,7 +12,7 @@ export default function Navbar() {
     const handleScrolled = () => {
       setIsScrolled(window.scrollY > 10);
 
-      for (let id of sections) {
+      for (const id of sections) {
         const section = document.getElementById(id);
         if (section) {
           const rect = section.getBoundingClientRect();
@@ -35,11 +35,11 @@ export default function Navbar() {
 
  return (
   <nav
-    className={`fixed max-w-7xl mx-auto top-0 left-0 w-full z-50 transition-colors duration-300 ${
+    className={`fixed  top-0 left-0 w-full z-50 transition-colors duration-300 ${
       isScrolled ? "bg-white shadow" : "bg-transparent"
     }`}
   >
-    <div className="px-6 md:px-12 py-2 flex justify-between items-center xl:max-w-7xl xl:mx-auto">
+    <div className="xl:px-6 md:px-12 py-2 flex justify-between items-center xl:max-w-7xl xl:mx-auto">
       <h1 className="invisible md:visible font-bold text-lg cursor-pointer select-none">
         Eyuel Endale
       </h1>

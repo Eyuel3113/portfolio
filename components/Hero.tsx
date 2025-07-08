@@ -101,7 +101,7 @@ export default function Hero() {
             <span className="text-black text-4xl">Eyuel Endale</span>
           </h1>
           <p className="text-gray-600 text-base md:text-lg">
-            I'm a passionate creative working at the intersection of software development, UI/UX design, and graphic design. I love building intuitive digital experiences, crafting clean interfaces, and bringing ideas to life through both code and visuals.
+            I&apos;m a passionate creative working at the intersection of software development, UI/UX design, and graphic design. I love building intuitive digital experiences, crafting clean interfaces, and bringing ideas to life through both code and visuals.
 
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -120,7 +120,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="w-full h-[350px] bg-yellow-300 md:bg-transparent md:w-[400px] md:h-[450px] lg:ml-auto ">
+          <div className="w-full h-[350px] bg-yellow-300 md:bg-transparent md:w-[450px] md:h-[450px] lg:ml-auto ">
             <img
               src="/hero.png"
               alt="Eyuel picture with yellow background"
