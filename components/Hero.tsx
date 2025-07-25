@@ -94,7 +94,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <p className="hidden md:flex text-yellow-500 font-semibold text-sm mt-8">
-            SOFTWARE DEVELOPMENT & UI/UX DESIGNER
+             UI/UX DESIGNER & SOFTWARE DEVELOPER
           </p>
           <h1 className="text-4xl font-bold leading-tight text-gray-900">
             Hello, I’m <br />
@@ -108,9 +108,9 @@ export default function Hero() {
             <button className="bg-yellow-400 px-6 py-2 font-semibold rounded-md hover:bg-yellow-500 transition">
               <a href="#projects">Projects</a>
             </button>
-            <button className="border border-gray-700 px-6 py-2 font-semibold rounded-md hover:bg-gray-100 transition">
+            <a href="www.linkedin.com/in/eyuel-endale-a85073227"className="border border-gray-700 px-6 py-2 font-semibold rounded-md hover:bg-gray-100 transition">
               LinkedIn
-            </button>
+            </a>
           </div>
         </motion.div>
 
@@ -147,9 +147,11 @@ export default function Hero() {
           </div>
 
           <div className="space-y-12">
-            <SkillGrid title="Software Development" skills={devSkills} />
             <SkillGrid title="UI / UX Design" skills={uiuxSkills} />
             <SkillGrid title="Graphic Design" skills={graphicSkills} />
+            <SkillGrid title="Software Development" skills={devSkills} />
+            
+            
           </div>
         </div>
       </section>
@@ -180,8 +182,7 @@ export default function Hero() {
                 Management System
               </h2>
               <p className="text-gray-600 mb-6">
-                This is a sample description for the right side of the card. You
-                can add more content here as needed.
+                Designed a complete Restaurant Management System, including a modern landing page, an intuitive admin dashboard, a mobile app interface, and engaging infographics for better user experience and data visualization.
               </p>
               <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
                 View Project
@@ -205,8 +206,7 @@ export default function Hero() {
                 Management System
               </h2>
               <p className="text-gray-600 mb-6">
-                This is a sample description for the right side of the card. You
-                can add more content here as needed.
+                Designed a complete Vehicle Parking Management System, including a modern landing page, a clean and functional admin dashboard, a mobile app interface, and informative infographics to enhance user experience and data visualization.
               </p>
               <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
                 View Project
@@ -220,18 +220,16 @@ export default function Hero() {
               />
             </div>
           </div>
-
           {/* Card 3 */}
-          <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden w-full">
+  <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden w-full">
             <div className="md:w-1/2 p-6 flex flex-col justify-center bg-amber-400">
               <h2 className="text-2xl font-bold mb-4">
-                Property & Tenants
+                Property
                 <br />
                 Management System
               </h2>
               <p className="text-gray-600 mb-6">
-                This is a sample description for the right side of the card. You
-                can add more content here as needed.
+                Designed a Property Management System with a sleek landing page, a functional admin dashboard, and informative infographics to enhance user engagement and data clarity.
               </p>
               <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
                 View Project
@@ -239,14 +237,80 @@ export default function Hero() {
             </div>
             <div className="md:w-1/2">
               <img
-                src="/prooject1.png"
+                src="/property.png"
                 alt="Card Image"
                 className="object-cover w-full h-full"
               />
             </div>
           </div>
+           {/* Card 4 */}
+ <div className="flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-lg overflow-hidden w-full">
+            <div className="md:w-1/2 p-6 flex flex-col justify-center  bg-amber-400">
+              <h2 className="text-2xl font-bold mb-4">
+                Websites
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Designed various websites across different industries, including spa, modeling, and more focusing on modern UI, user-friendly layouts, and visually appealing designs.
+              </p>
+              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
+                View Project
+              </button>
+            </div>
+            <div className="md:w-1/2">
+              <img
+                src="/spa.png"
+                alt="Card Image"
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+           {/* Card 5 */}
+  <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden w-full">
+            <div className="md:w-1/2 p-6 flex flex-col justify-center bg-amber-400">
+              <h2 className="text-2xl font-bold mb-4">
+                Admin Dashboards
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Designed multiple Admin Dashboards for diverse domains such as HRM, laboratory systems, and more focused on clean layouts, intuitive user experience, and effective data visualization.
+              </p>
+              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
+                View Project
+              </button>
+            </div>
+            <div className="md:w-1/2">
+              <img
+                src="/dash board.png"
+                alt="Card Image"
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+           {/* Card 6 */}
+ <div className="flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-lg overflow-hidden w-full">
+            <div className="md:w-1/2 p-6 flex flex-col justify-center  bg-amber-400">
+              <h2 className="text-2xl font-bold mb-4">
+                Mobile Applications
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Designed mobile apps for various use cases, including a vehicle parking app and a food ordering app emphasizing intuitive navigation, modern UI, and user-friendly experiences.
+              </p>
+              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
+                View Project
+              </button>
+            </div>
+            <div className="md:w-1/2">
+              <img
+                src="/project2.png"
+                alt="Card Image"
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          
+          
         </div>
       </div>
+        
 
       {/* Contact Section */}
       <section id="contact" className="py-20">
