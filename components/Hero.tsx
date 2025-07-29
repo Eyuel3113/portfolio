@@ -279,7 +279,7 @@ export default function Hero() {
             </div>
             <div className="md:w-1/2">
               <img
-                src="/dash board.png"
+                src="/dashboards.png"
                 alt="Card Image"
                 className="object-cover w-full h-full"
               />
