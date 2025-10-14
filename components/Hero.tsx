@@ -94,14 +94,15 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <p className="hidden md:flex text-yellow-500 font-semibold text-sm mt-8">
-             UI/UX DESIGNER & SOFTWARE DEVELOPER
+              FULL STACK DEVELOPER & UI/UX DESIGNER
           </p>
           <h1 className="text-4xl font-bold leading-tight text-gray-900">
             Hello, I’m <br />
             <span className="text-black text-4xl">Eyuel Endale</span>
           </h1>
           <p className="text-gray-600 text-base md:text-lg">
-            I&apos;m a passionate creative working at the intersection of software development, UI/UX design, and graphic design. I love building intuitive digital experiences, crafting clean interfaces, and bringing ideas to life through both code and visuals.
+            I&apos;ma Full Stack Developer and UI/UX Designer passionate about creating seamless digital experiences that blend functionality with aesthetics. I build scalable web applications using Next.js, Node.js, Express, Prisma, and PostgreSQL, and design user-centered interfaces with a focus on clarity and engagement. From crafting intuitive dashboards to integrating real-time features, payments, and SMS notifications, I bring ideas to life through clean code and thoughtful design.
+
 
           </p>
           <div className="flex gap-4 flex-wrap">
