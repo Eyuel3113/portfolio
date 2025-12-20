@@ -1,22 +1,41 @@
-export default function Footer() {
-  return (
-    <footer className="relative mt-12 w-full">
-      {/* Footer Image */}
-      <img
-        src="/footer.png"
-        alt="footer background"
-        className="w-full h-auto object-cover"
-      />
+import React from 'react';
+import Container from './ui/Container';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
-      {/* Text Overlay directly on image */}
-      <div className="absolute inset-0 flex flex-col items-center justify-end text-center px-4 pb-1 z-20">
-  <h2 className="text-black text-sm md:text-2xl   font-bold">
-    Thank you for visiting my portfolio
-  </h2>
-  <p className="text-black text-sm md:text-base mt-2">
-    Designed and developed by <span className="font-semibold">Eyuel Endale</span>
-  </p>
-</div>
+const Footer = () => {
+  return (
+    <footer className="py-12 border-t border-white/5 bg-black/20">
+      <Container>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl font-bold mb-2">Eyuel<span className="text-primary">.dev</span></h2>
+            <p className="text-muted-foreground text-sm max-w-xs">
+              Building scalable backends and reliable systems for the modern web.
+            </p>
+          </div>
+
+          <div className="flex gap-6">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Github size={20} />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin size={20} />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Twitter size={20} />
+            </a>
+            <a href="mailto:contact@eyuel.dev" className="text-muted-foreground hover:text-primary transition-colors">
+              <Mail size={20} />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-white/5 text-center text-xs text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} Eyuel Endale. All rights reserved.</p>
+        </div>
+      </Container>
     </footer>
   );
-}
+};
+
+export default Footer;

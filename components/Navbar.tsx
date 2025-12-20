@@ -1,112 +1,109 @@
-'use client' 
-import { useState, useEffect } from "react";
+'use client';
 
-const sections = ["home", "skills", "projects", "contact"];
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
+import Container from './ui/Container';
+import Button from './ui/Button';
 
-export default function Navbar() {
+const navLinks = [
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#about' },
+];
+
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [active, setActive] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScrolled = () => {
-      setIsScrolled(window.scrollY > 10);
-
-      for (const id of sections) {
-        const section = document.getElementById(id);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActive(id);
-            break;
-          }
-        }
-      }
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
     };
-
-    window.addEventListener("scroll", handleScrolled);
-    return () => window.removeEventListener("scroll", handleScrolled);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on navigation link click
-  const onLinkClick = () => {
-    setMobileMenuOpen(false);
-  };
-
- return (
-  <nav
-    className={`fixed  top-0 left-0 w-full z-50 transition-colors duration-300 ${
-      isScrolled ? "bg-white shadow" : "bg-transparent"
-    }`}
-  >
-    <div className="xl:px-6 md:px-12 py-2 flex justify-between items-center xl:max-w-7xl xl:mx-auto">
-      <h1 className="invisible md:visible font-bold text-lg cursor-pointer select-none">
-        Eyuel Endale
-      </h1>
-
-      {/* Desktop Menu */}
-      <ul className="hidden md:flex gap-8 text-sm font-medium">
-        {sections.map((id) => (
-          <li key={id}>
-            <a
-              href={`#${id}`}
-              className={`hover:underline ${
-                active === id ? "text-yellow-500 font-semibold" : "text-black"
-              }`}
-            >
-              {id.charAt(0).toUpperCase() + id.slice(1)}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      {/* Mobile Hamburger */}
-      <button
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden flex flex-col justify-center items-center gap-1 w-8 h-8 focus:outline-none"
-        aria-label="Toggle menu"
-      >
-        <span
-          className={`block h-1 w-full bg-black rounded transition-transform duration-300 ${
-            mobileMenuOpen ? "rotate-45 translate-y-2.5" : ""
-          }`}
-        />
-        <span
-          className={`block h-1 w-full bg-black rounded transition-opacity duration-300 ${
-            mobileMenuOpen ? "opacity-0" : "opacity-100"
-          }`}
-        />
-        <span
-          className={`block h-1 w-full bg-black rounded transition-transform duration-300 ${
-            mobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
-          }`}
-        />
-      </button>
-    </div>
-
-    {/* Mobile Menu */}
-    <div
-      className={`fixed top-[56px] left-0 w-full bg-white shadow-md md:hidden overflow-hidden transition-max-height duration-300 ${
-        mobileMenuOpen ? "max-h-60" : "max-h-0"
-      }`}
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 glass border-b border-white/5' : 'py-6 bg-transparent'}`}
     >
-      <ul className="flex flex-col gap-6 p-6 text-center text-lg font-semibold">
-        {sections.map((id) => (
-          <li key={id}>
-            <a
-              href={`#${id}`}
-              onClick={onLinkClick}
-              className={`hover:underline ${
-                active === id ? "text-yellow-500" : "text-black"
-              }`}
-            >
-              {id.charAt(0).toUpperCase() + id.slice(1)}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </nav>
-);
+      <Container>
+        <div className="flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold tracking-tighter hover:text-primary transition-colors">
+            Eyuel<span className="text-primary">.dev</span>
+          </Link>
 
-}
+          {/* Desktop Interface */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:glow"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-4 border-r border-white/10 pr-4">
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Github size={20} />
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Linkedin size={20} />
+              </Link>
+            </div>
+            <Button variant="primary" size="sm" href="mailto:contact@eyuel.dev">
+              Hire Me
+            </Button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+      </Container>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="absolute top-full left-0 right-0 glass border-b border-white/10 md:hidden p-6 animate-fade-in">
+          <nav className="flex flex-col gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-lg font-medium text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <div className="flex items-center gap-6 pt-6 border-t border-white/10">
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Github size={24} />
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Linkedin size={24} />
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Twitter size={24} />
+              </Link>
+            </div>
+            <Button className="w-full" href="mailto:contact@eyuel.dev">
+              Hire Me
+            </Button>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Navbar;

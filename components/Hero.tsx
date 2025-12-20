@@ -1,353 +1,92 @@
-'use client'
-import React from "react";
+'use client';
+
+import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  FaReact, FaNodeJs, FaFigma, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaGitAlt,
-} from "react-icons/fa";
-import {
-  SiNextdotjs, SiPostgresql, SiPrisma, SiCanva, SiExpress, SiAdobe,
-  SiTailwindcss,
-  SiMongodb,
-  SiMysql,
-  SiSqlite
-} from "react-icons/si";
+import { Terminal, ArrowRight, Download, Server, Database } from 'lucide-react';
+import Container from './ui/Container';
+import Button from './ui/Button';
 
-const devSkills = [
-  { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
-  { name: "React", icon: <FaReact className="text-blue-400" /> },
-  { name: "Next.js", icon: <SiNextdotjs className="text-black" /> },
-  { name: "TailwindCss", icon: <SiTailwindcss className="text-blue-400" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
-  { name: "Express", icon: <SiExpress className="text-gray-700" /> },
-  { name: "Prisma", icon: <SiPrisma className="text-indigo-500" /> },
-  { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-600" /> },
-  { name: "Mysql", icon: <SiMysql className="text-gray-700" /> },
-  { name: "Sqlite", icon: <SiSqlite className="text-orange-700" /> },
-  { name: "MongoDb", icon: <SiMongodb className="text-green-600" /> },
-  { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
-  { name: "GitHub", icon: <FaGithub className="text-black" /> },
-];
-
-const uiuxSkills = [
-  { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
-  { name: "Adobe XD", icon: <SiAdobe className="text-red-500" /> },
-];
-
-const graphicSkills = [
-  { name: "Illustrator", icon: <SiAdobe className="text-orange-400" /> },
-  { name: "InDesign", icon: <SiAdobe className="text-pink-400" /> },
-  { name: "Canva", icon: <SiCanva className="text-blue-500" /> },
-];
-
-function SkillGrid({
-  title,
-  skills,
-}: {
-  title: string;
-  skills: { name: string; icon: React.ReactElement }[];
-}) {
+const Hero = () => {
   return (
-    <div>
-      <h3 className="text-xl font-semibold mb-4 text-center">{title}</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        {skills.map((skill) => (
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background z-0" />
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-30 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-3xl opacity-30 animate-pulse delay-700" />
+
+      <Container className="relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            key={skill.name}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center p-4 border-2 border-yellow-400 rounded-xl transition-all duration-300 hover:bg-gradient-to-tr hover:from-yellow-300 hover:to-yellow-100 hover:scale-105 shadow-sm"
-          >
-            <motion.div
-              className="text-4xl mb-2"
-              whileHover={{
-                scale: 1.2,
-                textShadow: "0px 0px 8px rgba(234,179,8,0.9)",
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              {skill.icon}
-            </motion.div>
-            <p className="text-center font-medium">{skill.name}</p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export default function Hero() {
-  return (
-    <section className="relative w-full bg-white pl-4 md:pl-12 overflow-hidden">
-      {/* Home Section */}
-      <div
-        className="xl:max-w-7xl xl:mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
-        id="home"
-      >
-        <motion.div
-          className="w-full md:w-1/2 space-y-5"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="hidden md:flex text-yellow-500 font-semibold text-sm mt-8">
-              FULL STACK DEVELOPER & UI/UX DESIGNER
-          </p>
-          <h1 className="text-4xl font-bold leading-tight text-gray-900">
-            Hello, I’m <br />
-            <span className="text-black text-4xl">Eyuel Endale</span>
-          </h1>
-          <p className="text-gray-600 text-base md:text-lg">
-            I&apos;ma Full Stack Developer and UI/UX Designer passionate about creating seamless digital experiences that blend functionality with aesthetics. I build scalable web applications using Next.js, Node.js, Express, Prisma, and PostgreSQL, and design user-centered interfaces with a focus on clarity and engagement. From crafting intuitive dashboards to integrating real-time features, payments, and SMS notifications, I bring ideas to life through clean code and thoughtful design.
-
-
-          </p>
-          <div className="flex gap-4 flex-wrap">
-            <button className="bg-yellow-400 px-6 py-2 font-semibold rounded-md hover:bg-yellow-500 transition">
-              <a href="#projects">Projects</a>
-            </button>
-            <a href="www.linkedin.com/in/eyuel-endale-a85073227"className="border border-gray-700 px-6 py-2 font-semibold rounded-md hover:bg-gray-100 transition">
-              LinkedIn
-            </a>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 relative flex justify-center items-start"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="w-full h-[350px] bg-yellow-300 md:bg-transparent md:w-[450px] md:h-[450px] lg:ml-auto ">
-            <img
-              src="/hero.png"
-              alt="Eyuel picture with yellow background"
-              className="bottom-0 right-0 w-full h-auto object-contain"
-            />
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex justify-center items-center mb-12">
-            <motion.h1
-              className="text-xl font-semibold relative inline-block"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.6 }}
-            >
-              Skills
-              <span className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2/3 h-1 bg-yellow-400 rounded-full -mb-1 z-[-1]"></span>
-            </motion.h1>
-          </div>
-
-          <div className="space-y-12">
-            <SkillGrid title="UI / UX Design" skills={uiuxSkills} />
-            <SkillGrid title="Graphic Design" skills={graphicSkills} />
-            <SkillGrid title="Software Development" skills={devSkills} />
-            
-            
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <div id="projects" className="py-20">
-        <div className="flex justify-center items-center mb-12 px-4">
-          <motion.h1
-            className="text-xl font-semibold relative inline-block"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            Project
-            <span className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2/3 h-1 bg-yellow-400 rounded-full -mb-1 z-[-1]"></span>
-          </motion.h1>
-        </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wider mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+              OPEN TO WORK
+            </div>
 
-        {/* Cards Container */}
-        <div className="flex flex-col space-y-8 px-4 max-w-4xl mx-auto">
-          {/* Card 1 */}
-          <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden w-full">
-            <div className="md:w-1/2 p-6 flex flex-col justify-center bg-amber-400">
-              <h2 className="text-2xl font-bold mb-4">
-                Restaurant
-                <br />
-                Management System
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Designed a complete Restaurant Management System, including a modern landing page, an intuitive admin dashboard, a mobile app interface, and engaging infographics for better user experience and data visualization.
-              </p>
-              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
-                View Project
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <img
-                src="/prooject1.png"
-                alt="Card Image"
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              Architecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Scalable</span> <br />
+              Backend Solutions.
+            </h1>
 
-          {/* Card 2 */}
-          <div className="flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-lg overflow-hidden w-full">
-            <div className="md:w-1/2 p-6 flex flex-col justify-center  bg-amber-400">
-              <h2 className="text-2xl font-bold mb-4">
-                Vehicle Parking
-                <br />
-                Management System
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Designed a complete Vehicle Parking Management System, including a modern landing page, a clean and functional admin dashboard, a mobile app interface, and informative infographics to enhance user experience and data visualization.
-              </p>
-              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
-                View Project
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <img
-                src="/project2.png"
-                alt="Card Image"
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-          {/* Card 3 */}
-  <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden w-full">
-            <div className="md:w-1/2 p-6 flex flex-col justify-center bg-amber-400">
-              <h2 className="text-2xl font-bold mb-4">
-                Property
-                <br />
-                Management System
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Designed a Property Management System with a sleek landing page, a functional admin dashboard, and informative infographics to enhance user engagement and data clarity.
-              </p>
-              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
-                View Project
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <img
-                src="/property.png"
-                alt="Card Image"
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-           {/* Card 4 */}
- <div className="flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-lg overflow-hidden w-full">
-            <div className="md:w-1/2 p-6 flex flex-col justify-center  bg-amber-400">
-              <h2 className="text-2xl font-bold mb-4">
-                Websites
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Designed various websites across different industries, including spa, modeling, and more focusing on modern UI, user-friendly layouts, and visually appealing designs.
-              </p>
-              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
-                View Project
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <img
-                src="/spa.png"
-                alt="Card Image"
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-           {/* Card 5 */}
-  <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden w-full">
-            <div className="md:w-1/2 p-6 flex flex-col justify-center bg-amber-400">
-              <h2 className="text-2xl font-bold mb-4">
-                Admin Dashboards
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Designed multiple Admin Dashboards for diverse domains such as HRM, laboratory systems, and more focused on clean layouts, intuitive user experience, and effective data visualization.
-              </p>
-              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
-                View Project
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <img
-                src="/dashboards.png"
-                alt="Card Image"
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-           {/* Card 6 */}
- <div className="flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-lg overflow-hidden w-full">
-            <div className="md:w-1/2 p-6 flex flex-col justify-center  bg-amber-400">
-              <h2 className="text-2xl font-bold mb-4">
-                Mobile Applications
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Designed mobile apps for various use cases, including a vehicle parking app and a food ordering app emphasizing intuitive navigation, modern UI, and user-friendly experiences.
-              </p>
-              <button className="px-4 py-2 text-sm mr-auto border rounded-2xl hover:bg-yellow-200 transition">
-                View Project
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <img
-                src="/project2.png"
-                alt="Card Image"
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-          
-          
-        </div>
-      </div>
-        
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
+              I am a Senior Backend Engineer & UI/UX Designer specializing in building high-performance systems with <span className="text-foreground font-semibold">Laravel</span>, <span className="text-foreground font-semibold">Sequelize</span>, and advanced database architectures. I turn complex logic into elegant code.
+            </p>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex justify-center items-center mb-12">
-            <motion.h1
-              className="text-xl font-semibold relative inline-block"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.6 }}
-            >
-              Contact
-              <span className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2/3 h-1 bg-yellow-400 rounded-full -mb-1 z-[-1]"></span>
-            </motion.h1>
-          </div>
+            <div className="flex flex-wrap gap-4">
+              <Button href="#projects" className="gap-2">
+                View Projects <ArrowRight size={18} />
+              </Button>
+              <Button variant="outline" href="/resume.pdf" external className="gap-2">
+                Download Resume <Download size={18} />
+              </Button>
+            </div>
+
+            <div className="mt-12 flex items-center gap-8 text-muted-foreground/50">
+              <Terminal size={32} />
+              <Server size={32} />
+              <Database size={32} />
+            </div>
+          </motion.div>
 
           <motion.div
-            className="mt-12 max-w-xl mx-auto text-center"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.6 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hidden lg:block relative"
           >
-            <p className="text-gray-600 mb-6">
-              Interested in working together or have any questions? Let's connect!
-            </p>
-            <a
-              href="mailto:eyuelendale7@gmail.com"
-              className="inline-block bg-yellow-400 text-white font-semibold px-6 py-2 rounded-md hover:bg-yellow-500 transition"
-            >
-              Send a Message
-            </a>
+            <div className="relative z-10 glass-card p-6 rounded-xl border-t border-l border-white/10 shadow-2xl">
+              <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-4">
+                <span className="w-3 h-3 rounded-full bg-red-500/80" />
+                <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                <span className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="ml-4 text-xs text-muted-foreground font-mono">server.js</div>
+              </div>
+              <div className="font-mono text-sm space-y-2">
+                <div className="text-blue-400">class <span className="text-yellow-300">BackendArchitecture</span> <span className="text-white">{`{`}</span></div>
+                <div className="pl-4 text-purple-400">constructor<span className="text-white">() {`{`}</span></div>
+                <div className="pl-8 text-white"><span className="text-blue-400">this</span>.skills = [<span className="text-green-300">'Laravel'</span>, <span className="text-green-300">'NodeJS'</span>, <span className="text-green-300">'Sequelize'</span>];</div>
+                <div className="pl-8 text-white"><span className="text-blue-400">this</span>.performance = <span className="text-orange-400">'High'</span>;</div>
+                <div className="pl-8 text-white"><span className="text-blue-400">this</span>.scalable = <span className="text-orange-400">true</span>;</div>
+                <div className="pl-4 text-white">{`}`}</div>
+                <div className="pl-4 text-purple-400">deploy<span className="text-white">() {`{`}</span></div>
+                <div className="pl-8 text-muted-foreground">// Deploying to production...</div>
+                <div className="pl-8 text-blue-400">return <span className="text-green-300">"System Online 🚀"</span>;</div>
+                <div className="pl-4 text-white">{`}`}</div>
+                <div className="text-white">{`}`}</div>
+              </div>
+            </div>
+
+            {/* Decorative background elements behind code block */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-2xl" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/20 rounded-full blur-2xl" />
           </motion.div>
         </div>
-      </section>
+      </Container>
     </section>
   );
-}
+};
+
+export default Hero;
