@@ -28,12 +28,12 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 glass border-b border-white/5' : 'py-6 bg-transparent'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 glass border-b border-white/8' : 'py-6 bg-transparent'}`}
     >
       <Container>
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold tracking-tighter hover:text-primary transition-colors">
-            Eyuel<span className="text-primary">.dev</span>
+            Eyuel<span className="text-primary"></span>
           </Link>
 
           {/* Desktop Interface */}

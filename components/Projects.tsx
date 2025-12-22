@@ -75,7 +75,7 @@ const projects = [
         title: "Property Management System",
         description: "An enterprise-grade platform for real estate agencies to manage portfolios, tenants, and maintenance requests. Focuses on document automation and financial reporting.",
         tags: ["SaaS", "Multi-tenant", "Document API"],
-        image: "/pms.png",
+        image: "/pms.PNG",
         demoUrl: "https://astedaderpms.com/en",
         repoUrl: "https://github.com",
         details: {
@@ -151,8 +151,7 @@ const Projects = () => {
 
     return (
         <Section id="projects" className="relative">
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl opacity-50 z-0" />
+            {/* Background decoration removed for global consistency */}
 
             <Container className="relative z-10">
                 <div className="mb-16 text-center">

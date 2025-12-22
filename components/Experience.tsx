@@ -50,7 +50,7 @@ const experiences = [
     {
         id: 4,
         role: "UI/UX Designer & Junior Web Developer",
-        company: "Power Sports p.l.c",
+        company: "Super Double T General Trading",
         period: "FEB 2023 - APR 2024",
         location: "Addis Ababa, Ethiopia",
         description: "Collaborated with the design team to implement responsive UI/UX designs. Assisted in backend API development.",
@@ -64,7 +64,7 @@ const experiences = [
 
 const Experience = () => {
     return (
-        <Section id="about" className="relative bg-background">
+        <Section id="about" className="relative">
             <Container>
                 <div className="mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional <span className="text-secondary">Experience</span></h2>
