@@ -3,88 +3,137 @@
 import React from 'react';
 import Section from './ui/Section';
 import Container from './ui/Container';
-import Card from './ui/Card';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const experiences = [
+    {
+        id: 1,
+        role: "Senior Backend Developer & UI/UX Designer",
+        company: "Phoenixopia Solution.",
+        period: "APR 2025 - Present",
+        location: "Addis Ababa, Ethiopia",
+        description: "Leading the development of scalable applications. Architecting microservices and mentoring junior developers.",
+        achievements: [
+            "Reduced API latency by 40% through redis caching strategies.",
+            "Led the migration of legacy monolith to microservices architecture.",
+            "Implemented CI/CD pipelines using GitHub Actions, reducing deployment time by 60%."
+        ]
+    },
+    {
+        id: 2,
+        role: "Full Stack Developer",
+        company: "Cabby Technology",
+        period: "JUL 2024 - FEB 2025",
+        location: "Addis Ababa, Ethiopia",
+        description: "Developed and maintained multiple client websites and web applications using Laravel and React.",
+        achievements: [
+            "Delivered  projects for high-profile clients within strict deadlines.",
+            "Optimized database queries, resulting in a 25% performance improvement.",
+            "Integrated third-party payment gateways (Stripe, Telebirr)."
+        ]
+    },
+    {
+        id: 3,
+        role: "Backend Developer",
+        company: "Power Sports p.l.c",
+        period: "APR 2024 - JUL 2024",
+        location: "Addis Ababa, Ethiopia",
+        description: "Collaborated with the design team to implement responsive UI/UX designs. Assisted in backend API development.",
+        achievements: [
+            "Developed and maintained robust backend systems",
+            "Ensuring efficient data management and scalable architecture",
+            "Designed and optimized APIs and database structures for high-performance applications"
+
+        ]
+    },
+    {
+        id: 4,
+        role: "UI/UX Designer & Junior Web Developer",
+        company: "Power Sports p.l.c",
+        period: "FEB 2023 - APR 2024",
+        location: "Addis Ababa, Ethiopia",
+        description: "Collaborated with the design team to implement responsive UI/UX designs. Assisted in backend API development.",
+        achievements: [
+            "Developed UI components using React and Tailwind CSS.",
+            "Assisted in fixing critical production bugs during launch weeks.",
+            "Participated in daily stand-ups and sprint planning sessions."
+        ]
+    }
+];
 
 const Experience = () => {
     return (
-        <Section id="about" className="bg-background">
+        <Section id="about" className="relative bg-background">
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <div className="lg:col-span-5 space-y-8">
-                        <h2 className="text-3xl md:text-4xl font-bold">
-                            Engineering with <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Purpose & Precision.</span>
-                        </h2>
+                <div className="mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional <span className="text-secondary">Experience</span></h2>
+                    <p className="text-muted-foreground max-w-xl">
+                        A timeline of my professional journey and key achievements in the tech industry.
+                    </p>
+                </div>
 
-                        <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-                            <p>
-                                My journey in software engineering has never been just about writing code; it's about solving real-world capital problems efficiently. I started as a curious developer tinkering with frontend interfaces but quickly realized that the true power of an application lies in its backbone—the backend.
-                            </p>
-                            <p>
-                                Over the years, I've transitioned into a Full Stack role with a heavy bias towards backend architecture. Whether it's optimizing complex SQL queries in <span className="text-foreground font-medium">Sequelize</span> to reduce load times by milliseconds, or structuring a modular <span className="text-foreground font-medium">Laravel</span> API that can scale with a growing user base, I thrive on the challenges of performance and reliability.
-                            </p>
-                            <p>
-                                I don't just "build websites." I architect digital ecosystems. From database schema design to containerized deployments, I ensure that every layer of the application is robust, secure, and ready for production.
-                            </p>
-                        </div>
-                    </div>
+                <div className="relative">
+                    {/* Vertical Line */}
+                    <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-secondary/50 to-transparent transform md:-translate-x-1/2" />
 
-                    <div className="lg:col-span-1 border-l border-white/5 hidden lg:block" />
+                    <div className="space-y-12">
+                        {experiences.map((exp, index) => (
+                            <motion.div
+                                key={exp.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.5, delay: index * 0.2 }}
+                                className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                            >
+                                {/* Timeline Dot */}
+                                <div className="absolute left-[-5px] md:left-1/2 top-0 transform md:-translate-x-1/2 w-3 h-3 rounded-full bg-primary ring-4 ring-background shadow-lg shadow-primary/50 z-10" />
 
-                    <div className="lg:col-span-6 space-y-8">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                            <Briefcase className="text-primary" /> Experience
-                        </h3>
-
-                        <div className="space-y-8">
-                            <Card className="relative overflow-hidden group">
-                                <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
-                                <div className="flex justify-between items-start mb-2">
-                                    <h4 className="text-xl font-bold">Senior Backend Developer</h4>
-                                    <div className="flex items-center gap-1 text-xs text-muted-foreground bg-white/5 px-2 py-1 rounded">
-                                        <Calendar size={12} /> 2023 - Present
+                                {/* Date/Period (Desktop) */}
+                                <div className={`hidden md:block w-1/2 ${index % 2 === 0 ? 'text-left pl-12' : 'text-right pr-12'}`}>
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm md:mt-0">
+                                        <Calendar size={14} className="text-primary" />
+                                        {exp.period}
                                     </div>
                                 </div>
-                                <p className="text-secondary font-medium text-sm mb-4">Tech Solutions Ltd.</p>
-                                <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
-                                    <li>Architected a microservices-based backend using Node.js and gRPC, improving system modularity.</li>
-                                    <li>Optimized database performance for high-traffic endpoints, reducing latency by 40%.</li>
-                                    <li>Mentored junior developers on best practices in API design and database normalization.</li>
-                                </ul>
-                            </Card>
 
-                            <Card className="relative overflow-hidden group">
-                                <div className="absolute top-0 left-0 w-1 h-full bg-secondary" />
-                                <div className="flex justify-between items-start mb-2">
-                                    <h4 className="text-xl font-bold">Full Stack Developer</h4>
-                                    <div className="flex items-center gap-1 text-xs text-muted-foreground bg-white/5 px-2 py-1 rounded">
-                                        <Calendar size={12} /> 2021 - 2023
+                                {/* Content Card */}
+                                <div className="w-full md:w-1/2 pl-8 md:pl-0">
+                                    <div className={`
+                                        glass-card p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-all duration-300
+                                        ${index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'}
+                                    `}>
+                                        <div className="flex items-start justify-between mb-4">
+                                            <div>
+                                                <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                                                <div className="flex items-center gap-2 text-primary mt-1">
+                                                    <Briefcase size={16} />
+                                                    <span className="font-medium">{exp.company}</span>
+                                                </div>
+                                            </div>
+                                            <div className="md:hidden inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs">
+                                                <Calendar size={12} className="text-primary" />
+                                                {exp.period}
+                                            </div>
+                                        </div>
+
+                                        <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                                            {exp.description}
+                                        </p>
+
+                                        <div className="space-y-3">
+                                            {exp.achievements.map((achievement, i) => (
+                                                <div key={i} className="flex items-start gap-3 text-sm text-foreground/80">
+                                                    <CheckCircle2 size={16} className="text-secondary mt-0.5 flex-shrink-0" />
+                                                    <span>{achievement}</span>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                                <p className="text-secondary font-medium text-sm mb-4">Creative Agency</p>
-                                <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
-                                    <li>Developed custom ERP solutions for manufacturing clients using Laravel and Vue.js.</li>
-                                    <li>Implemented complex payroll and inventory management logic complying with local regulations.</li>
-                                    <li>Led the migration of legacy codebases to modern frameworks, ensuring zero downtime.</li>
-                                </ul>
-                            </Card>
-
-                            <Card className="relative overflow-hidden group">
-                                <div className="absolute top-0 left-0 w-1 h-full bg-muted-foreground" />
-                                <div className="flex justify-between items-start mb-2">
-                                    <h4 className="text-xl font-bold">Freelance Developer</h4>
-                                    <div className="flex items-center gap-1 text-xs text-muted-foreground bg-white/5 px-2 py-1 rounded">
-                                        <Calendar size={12} /> 2019 - 2021
-                                    </div>
-                                </div>
-                                <p className="text-secondary font-medium text-sm mb-4">Self-Employed</p>
-                                <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
-                                    <li>Delivered 15+ custom web applications for international clients.</li>
-                                    <li>Specialized in building high-conversion landing pages and custom e-commerce plugins.</li>
-                                </ul>
-                            </Card>
-                        </div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </Container>

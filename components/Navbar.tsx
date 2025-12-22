@@ -2,14 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
+import { FaTelegram } from 'react-icons/fa';
 import Container from './ui/Container';
 import Button from './ui/Button';
 
 const navLinks = [
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Experience', href: '#about' },
+  { name: 'Skills', href: '/#skills' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Experience', href: '/#about' },
+  { name: 'Contact', href: '/profile/contact' },
 ];
 
 const Navbar = () => {
@@ -49,14 +51,17 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-4">
             <div className="flex items-center gap-4 border-r border-white/10 pr-4">
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://github.com/Eyuel3113" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Github size={20} />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://linkedin.com/in/eyuel-endale-a85073227" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Linkedin size={20} />
               </Link>
+              <Link href="https://t.me/Eyuel_Endale" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
+                <FaTelegram size={20} />
+              </Link>
             </div>
-            <Button variant="primary" size="sm" href="mailto:contact@eyuel.dev">
+            <Button variant="primary" size="sm" href="mailto:eyuelendale7@gmail.com">
               Hire Me
             </Button>
           </div>
@@ -86,17 +91,17 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex items-center gap-6 pt-6 border-t border-white/10">
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://github.com/Eyuel3113" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Github size={24} />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://linkedin.com" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Linkedin size={24} />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Twitter size={24} />
+              <Link href="https://t.me/Eyuel_Endale" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
+                <FaTelegram size={24} />
               </Link>
             </div>
-            <Button className="w-full" href="mailto:contact@eyuel.dev">
+            <Button className="w-full" href="mailto:eyuelendale7@gmail.com">
               Hire Me
             </Button>
           </nav>

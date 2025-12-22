@@ -15,7 +15,7 @@ const skills = [
     {
         category: "Databases & ORM",
         icon: <Database className="text-secondary" size={24} />,
-        items: ["PostgreSQL", "MySQL", "MongoDB", "Sequelize", "Prisma", "Redis"]
+        items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite", "Sequelize", "Prisma"]
     },
     {
         category: "Frontend & UI/UX",
@@ -25,17 +25,17 @@ const skills = [
     {
         category: "DevOps & Cloud",
         icon: <Cpu className="text-indigo-400" size={24} />,
-        items: ["AWS", "Docker", "Kubernetes", "CI/CD Pipelines", "Nginx", "Linux"]
+        items: ["AWS", "Docker", "Kubernetes", "CI/CD Pipelines"]
     },
     {
         category: "Architecture",
         icon: <GitBranch className="text-pink-400" size={24} />,
-        items: ["Microservices", "REST API Design", "GraphQL", "System Design", "Event-Driven", "WebSockets"]
+        items: ["Microservices", "REST API Design", "System Design", "Event-Driven", "WebSockets"]
     },
     {
         category: "Tools & Methodologies",
         icon: <Code className="text-teal-400" size={24} />,
-        items: ["Git / GitHub", "Jira", "Agile / Scrum", "TDD", "Postman", "Swagger"]
+        items: ["Git / GitHub", "Jira", "Agile / Scrum", "Scribe", "Postman", "Swagger"]
     }
 ];
 
