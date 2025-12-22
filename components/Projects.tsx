@@ -75,7 +75,7 @@ const projects = [
         title: "Property Management System",
         description: "An enterprise-grade platform for real estate agencies to manage portfolios, tenants, and maintenance requests. Focuses on document automation and financial reporting.",
         tags: ["SaaS", "Multi-tenant", "Document API"],
-        image: "/pms.png",
+        image: "/pms.PNG",
         demoUrl: "https://astedaderpms.com/en",
         repoUrl: "https://github.com",
         details: {
