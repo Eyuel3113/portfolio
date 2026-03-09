@@ -57,7 +57,7 @@ const projects = [
         description: "A smart city solution aimed at optimizing parking space utilization. Features license plate recognition integration, automated billing, and a mobile app for drivers to find spots.",
         tags: ["Django", "Next.js", "Flutter", "SAAS", "ArifPay"],
         image: "/project2.png",
-        demoUrl: "https://vpms.astedader.com",
+        demoUrl: "https://vpms.phoenixopia.com",
         repoUrl: "https://github.com",
         details: {
             challenge: "Accurately tracking vehicle entry/exit in high-traffic conditions and minimizing latency for barrier control.",
