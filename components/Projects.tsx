@@ -12,9 +12,52 @@ import Toast from './ui/Toast';
 
 const projects = [
     {
+        title: "TEQUAMI",
+        description: "An all-in-one smart mobility platform designed for vehicle owners across Ethiopia to find fuel stations, smart parking, and EV charging in real-time.",
+        tags: ["React", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Prisma", "Flutter", "StarPay"],
+        image: "/TEQUAMI.png",
+        repoUrl: "https://github.com",
+        demoLinks: [
+            { label: "App Download", url: "https://tequami-app-downloader.vercel.app" },
+            { label: "Dashboard", url: "https://front-lake-three.vercel.app" }
+        ],
+        details: {
+            challenge: "Providing real-time updates for fuel availability, queue lengths, and parking spaces across a city.",
+            solution: "Built a comprehensive system with a Flutter mobile app for users and a React/Tailwind dashboard for station managers, backed by Node.js and PostgreSQL for real-time data sync.",
+            features: [
+                "Find Fuel Instantly with live availability",
+                "Smart Parking Access with navigation",
+                "EV Charging Ready locations",
+                "Live Queue & Traffic Insights",
+                "Real-Time Alerts & Notifications",
+                "Subscription management via StarPay Payment Gateway",
+                "4 local languages included"
+            ]
+        }
+    },
+    {
+        title: "Kendo Number Game",
+        description: "A full-stack real-time Keno lottery game built with Node.js, React, and PostgreSQL.",
+        tags: ["React", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "Docker", "Swagger"],
+        image: "/Kendo Number Game.png",
+        demoUrl: "https://keno-game-eight.vercel.app",
+        repoUrl: "https://github.com",
+        details: {
+            challenge: "Implementing live Keno draws with real-time animation and building a secure wallet system for deposits and withdrawals.",
+            solution: "Utilized Socket.IO for real-time synchronization and developed a robust backend using Node.js, Express, and Prisma ORM to manage game logic and transactions.",
+            features: [
+                "Live Keno draws with real-time animation",
+                "Wallet system with deposit & withdraw funds",
+                "Transaction and bet history tracking",
+                "JWT authentication",
+                "Fully containerized with Docker"
+            ]
+        }
+    },
+    {
         title: "Human Resource Management System",
         description: "A comprehensive digital solution for modern Human Resource Management System, featuring automated Attendance processing, Leave Management, Payroll Processing, and Staff Performance Analytics.",
-        tags: ["Laravel", "React", "MySQL", "Real-time", "Non SAAS", "Document API"],
+        tags: ["Laravel", "React", "MySQL", "Real-time", "Non SAAS", "Scribe", "Biometrics"],
         image: "/hrm-landing.png",
         demoUrl: "https://example.com",
         repoUrl: "https://github.com",
@@ -35,7 +78,7 @@ const projects = [
     {
         title: "Restaurant Management System",
         description: "A comprehensive digital solution for modern restaurants, featuring automated order processing, inventory tracking, and real-time analytics. The system bridges the gap between kitchen staff, waitstaff, and management.",
-        tags: ["Node.js", "Next.js", "postgres", "Real-time", "Flutter", "SAAS", "ArifPay"],
+        tags: ["Node.js", "Next.js", "postgres", "Sequelize", "Real-time", "Flutter", "SAAS", "ArifPay"],
         image: "/prooject1.png",
         demoUrl: "https://restaurant-zeta-wheat.vercel.app",
         repoUrl: "https://github.com",
@@ -48,7 +91,8 @@ const projects = [
                 "Ingredient-level Inventory Tracking",
                 "Integrated With Local Payment Gatways",
                 "Staff Performance Analytics",
-                "Google Map Integrated"
+                "Google Map Integrated",
+                "Video Reel"
             ]
         }
     },
@@ -74,9 +118,12 @@ const projects = [
     {
         title: "Property Management System",
         description: "An enterprise-grade platform for real estate agencies to manage portfolios, tenants, and maintenance requests. Focuses on document automation and financial reporting.",
-        tags: ["SaaS", "Multi-tenant", "Document API"],
+        tags: ["SaaS", "Multi-tenant", "Swagger"],
         image: "/pms.PNG",
-        demoUrl: "https://astedaderpms.com/en",
+        demoLinks: [
+            { label: "Astedader Demo", url: "https://astedaderpms.com/en" },
+            { label: "Phoenixopia Demo", url: "https://front-phoenixopia.vercel.app/en" }
+        ],
         repoUrl: "https://github.com",
         details: {
             challenge: "Handling complex lease structures and generating compliant legal documents dynamically.",

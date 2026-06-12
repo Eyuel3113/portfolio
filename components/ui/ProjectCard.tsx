@@ -112,7 +112,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                         className="flex flex-wrap gap-2"
                         style={{ transform: "translateZ(25px)" }}
                     >
-                        {project.tags.slice(0, 3).map((tag: string, i: number) => (
+                        {project.tags.map((tag: string, i: number) => (
                             <span key={i} className="px-2 py-1 text-[10px] uppercase tracking-wider font-semibold rounded bg-white/5 border border-white/10 text-muted-foreground">
                                 {tag}
                             </span>
