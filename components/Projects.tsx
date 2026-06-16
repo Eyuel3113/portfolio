@@ -37,10 +37,10 @@ const projects = [
     },
     {
         title: "Kendo Number Game",
-        description: "A full-stack real-time Keno lottery game built with Node.js, React, and PostgreSQL.",
+        description: "A Telegram mini app featuring a full-stack real-time Keno lottery game built with Node.js, React, and PostgreSQL.",
         tags: ["React", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "Docker", "Swagger"],
         image: "/Kendo Number Game.png",
-        demoUrl: "https://keno-game-eight.vercel.app",
+        demoUrl: "https://t.me/kendogamebot/kendo",
         repoUrl: "https://github.com",
         details: {
             challenge: "Implementing live Keno draws with real-time animation and building a secure wallet system for deposits and withdrawals.",
@@ -50,6 +50,27 @@ const projects = [
                 "Wallet system with deposit & withdraw funds",
                 "Transaction and bet history tracking",
                 "JWT authentication",
+                "Fully containerized with Docker"
+            ]
+        }
+    },
+    {
+        title: "እርማት AI (ERMAT AI)",
+        description: "A code reviewer AI platform that processes source files with real-time streaming analysis, token tracking, and local payment integration.",
+        tags: ["Next.js", "Tailwind CSS", "Express.js", "Node.js", "PostgreSQL", "Prisma ORM", "Docker", "Google Generative AI", "Groq Cloud SDK", "Chapa REST API", "SSE"],
+        image: "/ermat-ai.png",
+        demoUrl: "https://example.com",
+        repoUrl: "https://github.com",
+        details: {
+            challenge: "Processing heavy source files while tracking user token states via a relational database layer and interfacing securely with local payment gateways.",
+            solution: "Built a decoupled full-stack architecture with Next.js frontend, Express.js backend, PostgreSQL via Prisma ORM, and integrated multiple AI engines (Google Gemini, Groq Llama) with Server-Sent Events for real-time streaming.",
+            features: [
+                "Dual-panel split-screen workspace for model selection",
+                "Real-time streaming markdown display with typewriter effect",
+                "Chapa balance top-up with secure webhook verification",
+                "User token allocation and tracking system",
+                "Multiple AI engine integration (Gemini, Groq, Claude mock)",
+                "Multipart file upload with memory storage",
                 "Fully containerized with Docker"
             ]
         }
