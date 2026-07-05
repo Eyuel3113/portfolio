@@ -38,7 +38,7 @@ const projects = [
     {
         title: "Kendo Number Game",
         description: "A Telegram mini app featuring a full-stack real-time Keno lottery game built with Node.js, React, and PostgreSQL.",
-        tags: ["React", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "Docker", "Swagger"],
+        tags: ["React", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "Docker", "Swagger", "Cron Jobs"],
         image: "/Kendo Number Game.png",
         demoUrl: "https://t.me/kendogamebot/kendo",
         repoUrl: "https://github.com",
