@@ -18,6 +18,7 @@ const projects = [
         image: "/TEQUAMI.png",
         repoUrl: "https://github.com",
         demoLinks: [
+            { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.phoenixopia.tequamiapp&hl=en" },
             { label: "App Download", url: "https://tequami-app-downloader.vercel.app" },
             { label: "Dashboard", url: "https://front-lake-three.vercel.app" }
         ],
@@ -79,8 +80,8 @@ const projects = [
         title: "Human Resource Management System",
         description: "A comprehensive digital solution for modern Human Resource Management System, featuring automated Attendance processing, Leave Management, Payroll Processing, and Staff Performance Analytics.",
         tags: ["Laravel", "React", "MySQL", "Real-time", "Non SAAS", "Scribe", "Biometrics"],
-        image: "/hrm-landing.png",
-        demoUrl: "https://example.com",
+        image: "/hrm-landing.jpg",
+        demoUrl: "https://hr00.netlify.app",
         repoUrl: "https://github.com",
         details: {
             challenge: "Managing Attendance Management with fingerprint authentication Ethiopian calendar",
