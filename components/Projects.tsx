@@ -259,11 +259,11 @@ const Projects = () => {
                 {selectedProject && (
                     <div className="space-y-8">
                         {/* Hero Image in Modal */}
-                        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-slate-950/50">
                             <img
                                 src={selectedProject.image}
                                 alt={selectedProject.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain"
                                 onError={(e) => {
                                     e.currentTarget.src = "https://placehold.co/800x600/1e293b/white?text=Project+Detail";
                                 }}
