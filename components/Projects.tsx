@@ -56,6 +56,29 @@ const projects = [
         }
     },
     {
+        title: "Inventory Pro Management System",
+        description: "An enterprise-grade inventory and Point of Sale (POS) platform built with Laravel 12 and React, featuring multi-warehouse tracking, barcode scanning, automated expiry alerts, and financial analytics.",
+        tags: ["Laravel 12", "React", "REST API", "MySQL", "POS System", "Barcode Ready", "Sanctum", "Scribe"],
+        image: "/inventory-pro.jpg",
+        demoUrl: "https://inv00.netlify.app/",
+        repoUrl: "https://github.com",
+        details: {
+            challenge: "Managing multi-warehouse stock allocations, real-time POS checkout concurrency, automated batch expiry tracking, and comprehensive debt/receivables accounting without data inconsistencies.",
+            solution: "Engineered an enterprise-grade RESTful API with Laravel 12 & Sanctum, atomic transactions for stock deduction, automated daily schedulers for batch expiry management, and an intuitive React interface with barcode scanning & PDF receipt generation.",
+            features: [
+                "Real-time Point of Sale (POS) checkout & stock deduction",
+                "Barcode scanning, generation, and bulk CSV ingestion",
+                "Multi-warehouse inventory & batch/expiry date tracking",
+                "Supplier procurement & automated receiving workflows",
+                "Customer receivables, supplier payables & loan settlement tracking",
+                "Executive financial analytics, P&L, VAT & inventory valuation reports",
+                "Automated daily background jobs for stock alerts & expiry warnings",
+                "Branded PDF invoice & receipt generation (Dompdf)",
+                "Full audit trails with Spatie Activitylog & interactive Scribe API docs"
+            ]
+        }
+    },
+    {
         title: "እርማት AI (ERMAT AI)",
         description: "A code reviewer AI platform that processes source files with real-time streaming analysis, token tracking, and local payment integration.",
         tags: ["Next.js", "Tailwind CSS", "Express.js", "Node.js", "PostgreSQL", "Prisma ORM", "Docker", "Google Generative AI", "Groq Cloud SDK", "Chapa REST API", "SSE"],
