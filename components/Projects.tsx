@@ -182,6 +182,26 @@ const projects = [
         }
     },
     {
+        title: "Ethiopian Receipt Verifier",
+        description: "An end-to-end receipt verification and fraud prevention mobile system for Ethiopian financial transactions, validating payment slips from CBE, Telebirr, and Bank of Abyssinia.",
+        tags: ["Flutter", "Dart", "Node.js", "Express", "OCR", "Google ML Kit", "SQLite", "Vercel"],
+        image: "/receipt-verifier.jpg",
+        repoUrl: "https://github.com",
+        details: {
+            challenge: "Combating receipt fabrication and photoshop fraud across Ethiopian digital banking and mobile payments, where forged screenshots or counterfeit slips deceive merchants, while navigating local ISP restrictions.",
+            solution: "Engineered a hybrid Flutter mobile app and Node.js serverless backend utilizing on-device Google ML Kit OCR, camera QR scanning, native PDF/HTML parsers, and direct banking validation gateways.",
+            features: [
+                "Real-time camera QR code scanning and reference extraction",
+                "On-device OCR receipt recognition powered by Google ML Kit",
+                "Direct verification with CBE, Telebirr, and Bank of Abyssinia gateways",
+                "Four-state fraud detection (Verified, Flagged, Not Found, Error)",
+                "Local persistent audit history and receipt storage via SQLite",
+                "Hybrid network strategy to overcome local banking IP restrictions",
+                "Client-side PDF & HTML DOM parsing without manual portal logins"
+            ]
+        }
+    },
+    {
         title: "Diverse Websites Portfolio",
         description: "A collection of high-impact websites designed for various industries including sport, fashion, Beauty and corporate sectors. Each site focuses on conversion optimization and brand storytelling.",
         tags: ["Web Design", "SEO", "Performance", "Animation"],
