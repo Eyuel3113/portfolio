@@ -316,30 +316,30 @@ const Projects = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                             <div className="lg:col-span-2 space-y-6">
                                 <div>
-                                    <h4 className="text-lg font-semibold text-white mb-2">Project Overview</h4>
-                                    <p className="text-muted-foreground leading-relaxed">
+                                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Project Overview</h4>
+                                    <p className="text-slate-600 dark:text-muted-foreground leading-relaxed">
                                         {selectedProject.description}
                                     </p>
                                 </div>
 
                                 <div>
-                                    <h4 className="text-lg font-semibold text-white mb-2">The Challenge</h4>
-                                    <p className="text-muted-foreground leading-relaxed">
+                                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">The Challenge</h4>
+                                    <p className="text-slate-600 dark:text-muted-foreground leading-relaxed">
                                         {selectedProject.details.challenge}
                                     </p>
                                 </div>
 
                                 <div>
-                                    <h4 className="text-lg font-semibold text-white mb-2">The Solution</h4>
-                                    <p className="text-muted-foreground leading-relaxed">
+                                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">The Solution</h4>
+                                    <p className="text-slate-600 dark:text-muted-foreground leading-relaxed">
                                         {selectedProject.details.solution}
                                     </p>
                                 </div>
                             </div>
 
                             <div className="space-y-6">
-                                <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                    <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Tech Stack</h4>
+                                <div className="bg-slate-50 dark:bg-white/5 p-6 rounded-xl border border-slate-200 dark:border-white/10">
+                                    <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4 border-b border-slate-200 dark:border-white/10 pb-2">Tech Stack</h4>
                                     <div className="flex flex-wrap gap-2">
                                         {selectedProject.tags.map((tag: string) => (
                                             <span key={tag} className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-medium">
@@ -349,11 +349,11 @@ const Projects = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                    <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Key Features</h4>
+                                <div className="bg-slate-50 dark:bg-white/5 p-6 rounded-xl border border-slate-200 dark:border-white/10">
+                                    <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4 border-b border-slate-200 dark:border-white/10 pb-2">Key Features</h4>
                                     <ul className="space-y-2">
                                         {selectedProject.details.features.map((feature: string, idx: number) => (
-                                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                            <li key={idx} className="flex items-start gap-2 text-sm text-slate-600 dark:text-muted-foreground">
                                                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
                                                 {feature}
                                             </li>

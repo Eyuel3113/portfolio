@@ -70,10 +70,9 @@ const ContactPage = () => {
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                 </div>
-                                <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 border-2 border-[#0f172a] rounded-full animate-pulse" />
                             </motion.div>
 
-                            <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70 mb-2">Eyuel Endale</h1>
+                            <h1 className="text-3xl font-bold text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-white dark:to-white/70 mb-2">Eyuel Endale</h1>
                             <p className="text-primary font-medium tracking-wide text-sm uppercase mb-6">Senior Full Stack Developer</p>
 
                             <div className="flex gap-4 mb-4">
@@ -83,7 +82,7 @@ const ContactPage = () => {
                                             href={social.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-white/10 ${social.color}`}
+                                            className={`w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-slate-200 dark:hover:bg-white/10 ${social.color}`}
                                         >
                                             {social.icon}
                                         </a>
@@ -93,11 +92,11 @@ const ContactPage = () => {
                         </div>
 
                         {/* Contact Details (Right) */}
-                        <div className="p-10 flex flex-col justify-center space-y-8 bg-[#0f172a]/40">
+                        <div className="p-10 flex flex-col justify-center space-y-8 bg-slate-50/60 dark:bg-[#0f172a]/40">
                             <div>
-                                <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+                                <h2 className="text-xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-white">
                                     Contact Details
-                                    <span className="h-px flex-1 bg-white/10" />
+                                    <span className="h-px flex-1 bg-slate-200 dark:bg-white/10" />
                                 </h2>
 
                                 <div className="space-y-6">
@@ -110,14 +109,14 @@ const ContactPage = () => {
                                             initial={{ x: 20, opacity: 0 }}
                                             animate={{ x: 0, opacity: 1 }}
                                             transition={{ delay: 0.3 + (index * 0.1) }}
-                                            className="flex items-center gap-4 group p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5"
+                                            className="flex items-center gap-4 group p-4 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-white/5"
                                         >
                                             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
                                                 {item.icon}
                                             </div>
                                             <div className="flex-1">
                                                 <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-1">{item.label}</p>
-                                                <p className="text-white font-medium break-all">{item.value}</p>
+                                                <p className="text-slate-900 dark:text-white font-medium break-all">{item.value}</p>
                                             </div>
                                             <ArrowRight size={16} className="text-muted-foreground opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                                         </motion.a>

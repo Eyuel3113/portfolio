@@ -5,7 +5,7 @@ import Container from './ui/Container';
 
 const Footer = () => {
   return (
-    <footer className="py-8 border-t border-white/5 bg-[#0f172a] text-muted-foreground">
+    <footer className="py-8 border-t border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-[#0f172a] text-slate-600 dark:text-muted-foreground">
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm">

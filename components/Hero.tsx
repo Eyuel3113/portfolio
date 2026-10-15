@@ -34,14 +34,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "auto" }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wider mb-6 overflow-hidden whitespace-nowrap"
-            >
-              <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
-              OPEN TO WORK
-            </motion.div>
+
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               Full Stack <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-pulse">Developer</span> <br />
@@ -49,7 +42,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              I build scalable, high-performance applications with a focus on <span className="text-white font-semibold">backend architecture</span> and <span className="text-white font-semibold">premium user experiences</span>.
+              I build scalable, high-performance applications with a focus on <span className="text-slate-900 dark:text-white font-semibold">backend architecture</span> and <span className="text-slate-900 dark:text-white font-semibold">premium user experiences</span>.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -82,7 +75,7 @@ const Hero = () => {
             <motion.div
               whileHover={{ rotateY: 5, rotateX: -5 }}
               style={{ transformStyle: "preserve-3d" }}
-              className="relative z-10 glass-card p-6 rounded-xl border-t border-l border-white/10 shadow-2xl transition-all duration-500"
+              className="relative z-10 bg-[#0f172a] text-slate-100 p-6 rounded-xl border border-white/10 shadow-2xl transition-all duration-500"
             >
               <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-4">
                 <span className="w-3 h-3 rounded-full bg-red-500/80" />

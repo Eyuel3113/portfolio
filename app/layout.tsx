@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 import GridBackground from '@/components/ui/GridBackground'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import Navbar from '@/components/Navbar'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -70,22 +71,43 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth dark" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  if (stored === 'light') {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                  } else {
+                    document.documentElement.classList.remove('light');
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className={`${outfit.variable} font-sans antialiased bg-background text-foreground overflow-x-hidden relative`}>
-        <ScrollProgress />
-        <GridBackground />
-        <Navbar />
-        <div className="relative z-10">
-          {children}
-        </div>
+        <ThemeProvider>
+          <ScrollProgress />
+          <GridBackground />
+          <Navbar />
+          <div className="relative z-10">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
 }
+
 

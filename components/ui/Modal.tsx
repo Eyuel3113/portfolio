@@ -43,17 +43,17 @@ const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.95, opacity: 0, y: 20 }}
                             onClick={(e) => e.stopPropagation()}
-                            className="relative w-full max-w-4xl max-h-[85vh] overflow-y-auto bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl flex flex-col"
+                            className="relative w-full max-w-4xl max-h-[85vh] overflow-y-auto bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col"
                         >
-                            <div className="sticky top-0 left-0 right-0 p-6 flex items-center justify-between border-b border-white/5 bg-[#0f172a]/80 backdrop-blur-md z-10">
-                                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
+                            <div className="sticky top-0 left-0 right-0 p-6 flex items-center justify-between border-b border-slate-200 dark:border-white/5 bg-white/90 dark:bg-[#0f172a]/80 backdrop-blur-md z-10">
+                                <h3 className="text-2xl font-bold text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-white dark:to-white/70">
                                     {title}
                                 </h3>
                                 <Button
                                     variant="ghost"
                                     size="sm"
                                     onClick={onClose}
-                                    className="rounded-full w-10 h-10 p-0 flex items-center justify-center hover:bg-white/10"
+                                    className="rounded-full w-10 h-10 p-0 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-white"
                                 >
                                     <X size={20} />
                                 </Button>

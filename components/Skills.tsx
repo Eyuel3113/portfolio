@@ -15,7 +15,7 @@ const skills = [
     {
         category: "Databases & ORM",
         icon: <Database className="text-secondary" size={24} />,
-        items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite", "Sequelize", "Prisma"]
+        items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "SQLite", "Prisma", "Sequelize"]
     },
     {
         category: "Frontend & UI/UX",
@@ -25,12 +25,12 @@ const skills = [
     {
         category: "DevOps & Cloud",
         icon: <Cpu className="text-indigo-400" size={24} />,
-        items: ["AWS", "Docker", "Kubernetes", "CI/CD Pipelines"]
+        items: ["AWS", "Docker", "Kubernetes", "Nginx", "Railway", "CI/CD Pipelines"]
     },
     {
         category: "Architecture",
         icon: <GitBranch className="text-pink-400" size={24} />,
-        items: ["Microservices", "REST API Design", "System Design", "Event-Driven", "WebSockets"]
+        items: ["Microservices", "RabbitMQ", "BullMQ", "System Design", "REST API Design", "WebSockets"]
     },
     {
         category: "Tools & Methodologies",
@@ -63,7 +63,7 @@ const Skills = () => {
                                 {skill.items.map((item, i) => (
                                     <span
                                         key={i}
-                                        className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary-foreground border border-primary/20"
+                                        className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary dark:text-primary-foreground border border-primary/20"
                                     >
                                         {item}
                                     </span>

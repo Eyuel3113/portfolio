@@ -6,6 +6,7 @@ import { Menu, X, Github, Linkedin } from 'lucide-react';
 import { FaTelegram } from 'react-icons/fa';
 import Container from './ui/Container';
 import Button from './ui/Button';
+import ThemeToggle from './ui/ThemeToggle';
 
 const navLinks = [
   { name: 'Skills', href: '/#skills' },
@@ -28,7 +29,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 glass border-b border-white/8' : 'py-6 bg-transparent'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 glass !border-none' : 'py-6 bg-transparent !border-none'}`}
     >
       <Container>
         <div className="flex items-center justify-between">
@@ -61,18 +62,23 @@ const Navbar = () => {
                 <FaTelegram size={20} />
               </Link>
             </div>
+            <ThemeToggle />
             <Button variant="primary" size="sm" href="mailto:eyuelendale7@gmail.com">
               Hire Me
             </Button>
           </div>
 
-          {/* Mobile Toggle */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X /> : <Menu />}
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button
+              className="text-foreground p-1"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </Container>
 

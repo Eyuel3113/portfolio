@@ -56,7 +56,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                 rotateX,
                 transformStyle: "preserve-3d",
             }}
-            className="group relative h-full rounded-2xl bg-card border border-white/5 cursor-pointer"
+            className="group relative h-full rounded-2xl bg-card border border-slate-200 dark:border-white/5 cursor-pointer"
             onClick={onClick}
         >
             <div
@@ -64,16 +64,16 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                 className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"
             />
 
-            <div className="relative h-full flex flex-col overflow-hidden rounded-2xl bg-[#0f172a] shadow-xl">
+            <div className="relative h-full flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-[#0f172a] shadow-xl border border-slate-100 dark:border-transparent">
                 {/* Image Section */}
                 <div
                     className="relative w-full aspect-video overflow-hidden"
                     style={{ transform: "translateZ(20px)" }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent z-10 opactiy-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0f172a] to-transparent z-10 opacity-70" />
 
                     {/* Placeholder or Image */}
-                    <div className="w-full h-full bg-slate-800 flex items-center justify-center text-slate-600">
+                    <div className="w-full h-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 dark:text-slate-600">
                         {/* We can replace this with actual Next/Image if available */}
                         <img
                             src={project.image}
@@ -95,14 +95,14 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                 {/* Content Section */}
                 <div className="p-6 flex-1 flex flex-col">
                     <h3
-                        className="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+                        className="text-xl font-bold mb-2 text-slate-900 dark:text-white group-hover:text-primary transition-colors"
                         style={{ transform: "translateZ(30px)" }}
                     >
                         {project.title}
                     </h3>
 
                     <p
-                        className="text-muted-foreground text-sm line-clamp-2 mb-4 flex-1"
+                        className="text-slate-600 dark:text-muted-foreground text-sm line-clamp-2 mb-4 flex-1"
                         style={{ transform: "translateZ(20px)" }}
                     >
                         {project.description}
@@ -113,7 +113,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                         style={{ transform: "translateZ(25px)" }}
                     >
                         {project.tags.map((tag: string, i: number) => (
-                            <span key={i} className="px-2 py-1 text-[10px] uppercase tracking-wider font-semibold rounded bg-white/5 border border-white/10 text-muted-foreground">
+                            <span key={i} className="px-2 py-1 text-[10px] uppercase tracking-wider font-semibold rounded bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-muted-foreground">
                                 {tag}
                             </span>
                         ))}

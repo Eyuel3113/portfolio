@@ -92,7 +92,7 @@ const Experience = () => {
 
                                 {/* Date/Period (Desktop) */}
                                 <div className={`hidden md:block w-1/2 ${index % 2 === 0 ? 'text-left pl-12' : 'text-right pr-12'}`}>
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm md:mt-0">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm md:mt-0 text-slate-700 dark:text-inherit">
                                         <Calendar size={14} className="text-primary" />
                                         {exp.period}
                                     </div>
@@ -106,25 +106,25 @@ const Experience = () => {
                                     `}>
                                         <div className="flex items-start justify-between mb-4">
                                             <div>
-                                                <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                                                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.role}</h3>
                                                 <div className="flex items-center gap-2 text-primary mt-1">
                                                     <Briefcase size={16} />
                                                     <span className="font-medium">{exp.company}</span>
                                                 </div>
                                             </div>
-                                            <div className="md:hidden inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs">
+                                            <div className="md:hidden inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs text-slate-700 dark:text-inherit">
                                                 <Calendar size={12} className="text-primary" />
                                                 {exp.period}
                                             </div>
                                         </div>
 
-                                        <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                                        <p className="text-slate-600 dark:text-muted-foreground mb-6 text-sm leading-relaxed">
                                             {exp.description}
                                         </p>
 
                                         <div className="space-y-3">
                                             {exp.achievements.map((achievement, i) => (
-                                                <div key={i} className="flex items-start gap-3 text-sm text-foreground/80">
+                                                <div key={i} className="flex items-start gap-3 text-sm text-slate-700 dark:text-foreground/80">
                                                     <CheckCircle2 size={16} className="text-secondary mt-0.5 flex-shrink-0" />
                                                     <span>{achievement}</span>
                                                 </div>
