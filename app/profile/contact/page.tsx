@@ -49,11 +49,11 @@ const ContactPage = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="glass-card rounded-3xl overflow-hidden p-0 border border-white/10 shadow-2xl backdrop-blur-xl"
+                    className="glass-card rounded-3xl overflow-hidden p-0 border border-slate-200 dark:border-white/10 shadow-2xl backdrop-blur-xl"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2">
                         {/* Profile Section (Left) */}
-                        <div className="relative p-10 flex flex-col items-center justify-center text-center bg-gradient-to-br from-white/5 to-transparent border-b md:border-b-0 md:border-r border-white/5">
+                        <div className="relative p-10 flex flex-col items-center justify-center text-center bg-gradient-to-br from-white/5 to-transparent border-b md:border-b-0 md:border-r border-slate-200 dark:border-white/5">
 
                             {/* Profile Image Wrapper with Glow */}
                             <motion.div
@@ -63,7 +63,7 @@ const ContactPage = () => {
                                 className="relative mb-6 group"
                             >
                                 <div className="absolute inset-0 bg-primary/50 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50" />
-                                <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white/10 shadow-inner bg-slate-800">
+                                <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-slate-200 dark:border-white/10 shadow-inner bg-slate-800">
                                     <img
                                         src="/photo.jpg"
                                         alt="Eyuel Endale"
@@ -124,7 +124,7 @@ const ContactPage = () => {
                                 </div>
                             </div>
 
-                            <div className="pt-4 border-t border-white/10">
+                            <div className="pt-4 border-t border-slate-200 dark:border-white/10">
                                 <Button className="w-full justify-center" href="/Full Stack Developer & UIUX Designer resume.pdf" external>
                                     Download Resume
                                 </Button>

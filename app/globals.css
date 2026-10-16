@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -120,4 +122,72 @@ html.light .glass-card {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Guaranteed Light Mode rules strictly matching Screenshot 1 */
+html.light .project-card-inner {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light .project-card-fade {
+  background: linear-gradient(to top, #ffffff, transparent) !important;
+}
+
+html.light .project-card-title {
+  color: #0f172a !important;
+}
+
+html.light .project-card-desc {
+  color: #475569 !important;
+}
+
+html.light .project-card-tag {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html.light .project-card-img-wrapper {
+  background-color: #f8fafc !important;
+}
+
+html.light .hero-text-highlight {
+  color: #0f172a !important;
+}
+
+html.light .experience-role-title {
+  color: #0f172a !important;
+}
+
+html.light .experience-card-desc {
+  color: #475569 !important;
+}
+
+html.light .experience-achievement-item {
+  color: #334155 !important;
+}
+
+html.light .experience-date-pill {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html.light .footer-wrapper {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+html.light .skills-title,
+html.light .skills-category {
+  color: #0f172a !important;
+}
+
+html.light .skills-badge {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+  color: #2563eb !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
 }

@@ -43,7 +43,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:glow"
+                className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-muted-foreground dark:hover:text-foreground transition-colors hover:glow"
               >
                 {link.name}
               </Link>
@@ -51,14 +51,14 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-4 border-r border-white/10 pr-4">
-              <Link href="https://github.com/Eyuel3113" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
+            <div className="flex items-center gap-4 border-r border-slate-200 dark:border-white/10 pr-4">
+              <Link href="https://github.com/Eyuel3113" target="_blank" className="text-slate-500 hover:text-slate-900 dark:text-muted-foreground dark:hover:text-foreground transition-colors">
                 <Github size={20} />
               </Link>
-              <Link href="https://linkedin.com/in/eyuel-endale-a85073227" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://linkedin.com/in/eyuel-endale-a85073227" target="_blank" className="text-slate-500 hover:text-slate-900 dark:text-muted-foreground dark:hover:text-foreground transition-colors">
                 <Linkedin size={20} />
               </Link>
-              <Link href="https://t.me/Eyuel_Endale" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://t.me/Eyuel_Endale" target="_blank" className="text-slate-500 hover:text-slate-900 dark:text-muted-foreground dark:hover:text-foreground transition-colors">
                 <FaTelegram size={20} />
               </Link>
             </div>

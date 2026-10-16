@@ -42,7 +42,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              I build scalable, high-performance applications with a focus on <span className="text-slate-900 dark:text-white font-semibold">backend architecture</span> and <span className="text-slate-900 dark:text-white font-semibold">premium user experiences</span>.
+              I build scalable, high-performance applications with a focus on <span className="text-slate-900 dark:text-white font-semibold hero-text-highlight">backend architecture</span> and <span className="text-slate-900 dark:text-white font-semibold hero-text-highlight">premium user experiences</span>.
             </p>
 
             <div className="flex flex-wrap gap-4">

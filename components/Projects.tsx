@@ -267,7 +267,7 @@ const Projects = () => {
 
             <Container className="relative z-10">
                 <div className="mb-16 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Selected <span className="text-secondary">Works</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">Selected <span className="text-secondary">Works</span></h2>
                     <p className="text-muted-foreground max-w-xl mx-auto">
                         A collection of systems, dashboards, and interfaces I have designed and developed.
                         <br />Click on a card to explore technical details.

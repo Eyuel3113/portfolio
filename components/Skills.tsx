@@ -44,7 +44,7 @@ const Skills = () => {
         <Section id="skills" className="">
             <Container>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical <span className="text-primary">Arsenal</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white skills-title">Technical <span className="text-primary">Arsenal</span></h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                         A comprehensive suite of tools and technologies I use to architect robust, scalable, and high-performance applications.
                     </p>
@@ -54,16 +54,16 @@ const Skills = () => {
                     {skills.map((skill, index) => (
                         <Card key={index} className="h-full">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                                <div className="p-3 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
                                     {skill.icon}
                                 </div>
-                                <h3 className="font-bold text-lg">{skill.category}</h3>
+                                <h3 className="font-bold text-lg text-slate-900 dark:text-white skills-category">{skill.category}</h3>
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 {skill.items.map((item, i) => (
                                     <span
                                         key={i}
-                                        className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary dark:text-primary-foreground border border-primary/20"
+                                        className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary dark:text-primary-foreground border border-primary/20 skills-badge"
                                     >
                                         {item}
                                     </span>

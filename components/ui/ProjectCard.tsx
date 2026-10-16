@@ -64,23 +64,23 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                 className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"
             />
 
-            <div className="relative h-full flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-[#0f172a] shadow-xl border border-slate-100 dark:border-transparent">
+            <div className="relative h-full flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-[#0f172a] shadow-xl border border-slate-100 dark:border-transparent project-card-inner">
                 {/* Image Section */}
                 <div
                     className="relative w-full aspect-video overflow-hidden"
                     style={{ transform: "translateZ(20px)" }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0f172a] to-transparent z-10 opacity-70" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0f172a] to-transparent z-10 opacity-70 project-card-fade" />
 
                     {/* Placeholder or Image */}
-                    <div className="w-full h-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 dark:text-slate-600">
+                    <div className="w-full h-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 dark:text-slate-600 project-card-img-wrapper">
                         {/* We can replace this with actual Next/Image if available */}
                         <img
                             src={project.image}
                             alt={project.title}
                             className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                             onError={(e) => {
-                                e.currentTarget.src = "https://placehold.co/600x400/1e293b/white?text=Project+Preview";
+                                e.currentTarget.src = "https://placehold.co/600x400/f1f5f9/475569?text=" + encodeURIComponent(project.title);
                             }}
                         />
                     </div>
@@ -95,14 +95,14 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                 {/* Content Section */}
                 <div className="p-6 flex-1 flex flex-col">
                     <h3
-                        className="text-xl font-bold mb-2 text-slate-900 dark:text-white group-hover:text-primary transition-colors"
+                        className="text-xl font-bold mb-2 text-slate-900 dark:text-white group-hover:text-primary transition-colors project-card-title"
                         style={{ transform: "translateZ(30px)" }}
                     >
                         {project.title}
                     </h3>
 
                     <p
-                        className="text-slate-600 dark:text-muted-foreground text-sm line-clamp-2 mb-4 flex-1"
+                        className="text-slate-600 dark:text-muted-foreground text-sm line-clamp-2 mb-4 flex-1 project-card-desc"
                         style={{ transform: "translateZ(20px)" }}
                     >
                         {project.description}
@@ -113,7 +113,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                         style={{ transform: "translateZ(25px)" }}
                     >
                         {project.tags.map((tag: string, i: number) => (
-                            <span key={i} className="px-2 py-1 text-[10px] uppercase tracking-wider font-semibold rounded bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-muted-foreground">
+                            <span key={i} className="px-2 py-1 text-[10px] uppercase tracking-wider font-semibold rounded bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-muted-foreground project-card-tag">
                                 {tag}
                             </span>
                         ))}
